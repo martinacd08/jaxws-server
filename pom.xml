@@ -107,14 +107,14 @@
 		</dependency>
 		
 		
-		<!-- dependency tutorial 
+		<!-- dependency tutorial -->
 		<dependency>
 		  <groupId>org.apache.cxf</groupId>
 		  <artifactId>cxf-rt-rs-security-cors</artifactId>
 		  <version>2.6.1</version>
 		</dependency>
 		
-			/dependency tutorial -->
+			<!-- /dependency tutorial -->
 	</dependencies>
 
 	<build>

@@ -9,7 +9,7 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	
-	<!-- bean tutorial 
+	<!-- bean tutorial -->
 	<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" id="logInInterceptor" />
 	<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" id="logOutInterceptor" />
 	<cxf:bus>
@@ -23,7 +23,7 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	
 	
 	<bean id="cors-filter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter"/>
-	 /bean tutorial -->
+	<!-- /bean tutorial -->
 
 	<bean id="helloservice"
 		class="soap.service.HelloServiceImpl" />
