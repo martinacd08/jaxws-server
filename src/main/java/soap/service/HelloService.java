@@ -7,13 +7,6 @@ import javax.jws.WebService;
  * @author chamerling
  * 
  */
- @CrossOriginResourceSharing(
-        allowOrigins = true, 
-        allowCredentials = true, 
-        /*maxAge = 1,*/ 
-        allowHeaders = true, 
-        exposeHeaders = true
-)
 @WebService
 public interface HelloService {
 

@@ -8,19 +8,6 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
-	
-	<!-- bean tutorial -->
-	<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" id="logInInterceptor" />
-	<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" id="logOutInterceptor" />
-	<cxf:bus>
-		<cxf:inInterceptors>
-			<ref bean="logInInterceptor" />
-		</cxf:inInterceptors>
-		<cxf:outInterceptors>
-			<ref bean="logOutInterceptor" />
-		</cxf:outInterceptors>
-	</cxf:bus>
-	<!-- /bean tutorial -->
 
 	<bean id="helloservice"
 		class="soap.service.HelloServiceImpl" />
