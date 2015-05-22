@@ -16,7 +16,8 @@ import org.apache.cxf.rs.security.cors.LocalPreflight;
         }, exposeHeaders = {
         "X-custom-3", "X-custom-4"
         }
-)
+) 
+
 @WebService
 public interface HelloService {
 
