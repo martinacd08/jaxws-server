@@ -2,12 +2,12 @@ package soap.service;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.jws.BindingType;
+
 /**
  * @author chamerling
  * 
  */
-@BindingType(JSONBindingID.JSON_BINDING)  
+ 
 @WebService 
 public interface HelloService {
 
