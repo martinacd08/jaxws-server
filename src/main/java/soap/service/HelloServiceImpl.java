@@ -6,7 +6,7 @@ package soap.service;
  */
 public class HelloServiceImpl implements HelloService {
 
-/*
+
 	@Override
 	public String sayHi(String input) {
 		System.out.println("Hello invoked : " + input);
@@ -17,15 +17,15 @@ public class HelloServiceImpl implements HelloService {
 	public String hola() {
 		
 		return String.format("metodo hola");
-	}*/
-	
+	}
+	/*
 	@Override
     public Book get(int id) {
         Book b = new Book(id);
         
         return b;
     }
-   
+   */
 
 }
  
