@@ -1,5 +1,10 @@
 package soap.service;
-public static final class Book {
-        public int id = 1;
-        public String title = "Java";
+public class Book {
+        public int id ;
+        public String title;
+		
+		public Book(int ids){
+			id = ids;
+			title  = "Java";
+		}
     }
