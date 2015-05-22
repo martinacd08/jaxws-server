@@ -21,8 +21,8 @@ public class HelloServiceImpl implements HelloService {
 	
 	@Override
     public Book get(int id) {
-        Book b = new Book();
-        b.id = id;
+        Book b = new Book(id);
+        
         return b;
     }
    
