@@ -12,7 +12,4 @@ public interface HelloService {
 
 	@WebMethod
 	String sayHi(String input);
-	
-	@WebMethod
-	String hola(String input);
 }
