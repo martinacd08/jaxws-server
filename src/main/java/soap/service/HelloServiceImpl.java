@@ -20,7 +20,7 @@ public class HelloServiceImpl implements HelloService {
 	}*/
 	
 	@Override
-    public Book get(@WebParam(name="id") int id) {
+    public Book get(int id) {
         Book b = new Book();
         b.id = id;
         return b;
@@ -28,7 +28,4 @@ public class HelloServiceImpl implements HelloService {
    
 
 }
- public static final class Book {
-        public int id = 1;
-        public String title = "Java";
-    }
+ 

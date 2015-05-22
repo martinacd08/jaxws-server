@@ -18,5 +18,5 @@ public interface HelloService {
 	String hola();*/
 	
 	@WebMethod
-    public Book get(@WebParam(name="id") int id);
+    public Book get(int id);
 }
