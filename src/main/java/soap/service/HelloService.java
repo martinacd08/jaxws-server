@@ -10,9 +10,12 @@ import javax.jws.WebService;
 @WebService
 public interface HelloService {
 
-	@WebMethod
+	/*@WebMethod
 	String sayHi(String input);
 	
 	@WebMethod
-	String hola();
+	String hola();*/
+	
+	@WebMethod
+    public Book get(@WebParam(name="id") int id);
 }
