@@ -20,8 +20,6 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 			<ref bean="logOutInterceptor" />
 		</cxf:outInterceptors>
 	</cxf:bus>
-	
-	<bean id="cors-filter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter"/>
 	<!-- /bean tutorial -->
 
 	<bean id="helloservice"
