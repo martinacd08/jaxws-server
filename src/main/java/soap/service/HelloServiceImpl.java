@@ -11,5 +11,11 @@ public class HelloServiceImpl implements HelloService {
 		System.out.println("Hello invoked : " + input);
 		return String.format("Hello '%s'", input);
 	}
+	
+	@Override
+	public String hola() {
+		
+		return String.format("metodo hola");
+	}
 
 }
