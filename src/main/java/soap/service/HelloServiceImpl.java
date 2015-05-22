@@ -25,9 +25,10 @@ public class HelloServiceImpl implements HelloService {
         b.id = id;
         return b;
     }
-    public static final class Book {
+   
+
+}
+ public static final class Book {
         public int id = 1;
         public String title = "Java";
     }
-
-}

@@ -7,7 +7,8 @@ import javax.jws.WebService;
  * @author chamerling
  * 
  */
-@WebService
+@BindingType(JSONBindingID.JSON_BINDING)  
+@WebService 
 public interface HelloService {
 
 	/*@WebMethod
