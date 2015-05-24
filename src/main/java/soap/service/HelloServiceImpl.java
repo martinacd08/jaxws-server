@@ -14,7 +14,7 @@ public class HelloServiceImpl implements HelloService {
 	}
 	
 	@Override
-	public Response hola() {
+	public String hola() {
 		
 		
 		return Response.ok(String.format("metodo hola")).header("Access-Control-Allow-Origin", "*").build();
