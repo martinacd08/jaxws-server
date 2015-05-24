@@ -24,6 +24,10 @@ public class JettyServer {
 		}
 
 		Server server = new Server(Integer.valueOf(webPort));
+		
+		
+		System.err.println ("Starting jetty "+server.getClass().getPackage().getImplementationVersion()+" ...");
+		
 		WebAppContext root = new WebAppContext();
 
 		root.setContextPath("/");
