@@ -43,7 +43,7 @@ public class JettyServer {
 		// Read more here:
 		// http://wiki.eclipse.org/Jetty/Reference/Jetty_Classloading
 		
-		/*
+		
 		
 		
 		FilterHolder filter = new FilterHolder();
@@ -56,9 +56,9 @@ public class JettyServer {
 	filter.setFilter(corsFilter);
  
 	FilterMapping filterMapping = createFilterMapping("/*", filter);
-	root.addFilter(filter, filterMapping);
+	root.addFilter(filter.class, filterMapping,1);
 		
-*/
+
 		
 		
 		root.setParentLoaderPriority(true);
