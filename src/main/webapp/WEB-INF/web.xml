@@ -18,50 +18,18 @@
 		</listener-class>
 	</listener>
 
-	
-	
-	
-	
 	<servlet>
 		<servlet-name>CXFServlet</servlet-name>
 		<servlet-class>
 			org.apache.cxf.transport.servlet.CXFServlet
 		</servlet-class>
 		<load-on-startup>1</load-on-startup>
-		
-		<!--
-		<servlet-name>CORS Filter</servlet-name>
-			<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-			 <init-param>
-				<param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
-				<param-value>soap.service.CORSFilter</param-value>
-			 </init-param>
-		-->
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>CXFServlet</servlet-name>
-		<!--<servlet-name>CORSFilter</servlet-name>-->
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
