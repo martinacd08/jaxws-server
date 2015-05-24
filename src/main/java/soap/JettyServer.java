@@ -42,23 +42,11 @@ public class JettyServer {
 		// behavior.
 		// Read more here:
 		// http://wiki.eclipse.org/Jetty/Reference/Jetty_Classloading
-		root.setParentLoaderPriority(true);
-
-		server.setHandler(root);
 		
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		ServletHandler handler = new ServletHandler();
- 
-	FilterHolder filter = new FilterHolder();
+		FilterHolder filter = new FilterHolder();
 	filter.setInitParameter("allowedOrigins", "*");
 	filter.setInitParameter("allowedMethods", "POST,GET,OPTIONS,PUT,DELETE,HEAD");
 	filter.setInitParameter("allowedHeaders", "X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept");
@@ -68,22 +56,19 @@ public class JettyServer {
 	filter.setFilter(corsFilter);
  
 	FilterMapping filterMapping = createFilterMapping("/*", filter);
-	handler.addFilter(filter, filterMapping);
- 
-	server.setHandler(handler);
-	handler.addServletWithMapping(JsonServlet.class, "/*");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	root.addFilter(filter, filterMapping);
 		
 
+		
+		
+		root.setParentLoaderPriority(true);
+
+		server.setHandler(root);
+
+		
+	root.addServlet(JsonServlet.class, "/*");
+		
+		
 		server.start();
 		server.join();
 	}
