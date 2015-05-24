@@ -43,7 +43,7 @@ public class JettyServer {
 		// Read more here:
 		// http://wiki.eclipse.org/Jetty/Reference/Jetty_Classloading
 		
-		
+		/*
 		
 		
 		FilterHolder filter = new FilterHolder();
@@ -58,15 +58,15 @@ public class JettyServer {
 	FilterMapping filterMapping = createFilterMapping("/*", filter);
 	root.addFilter(filter, filterMapping);
 		
-
+*/
 		
 		
 		root.setParentLoaderPriority(true);
 
 		server.setHandler(root);
 
-		
-	root.addServlet(JsonServlet.class, "/*");
+		/*
+	root.addServlet(JsonServlet.class, "/*");*/
 		
 		
 		server.start();
