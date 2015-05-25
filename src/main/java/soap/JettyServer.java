@@ -45,19 +45,7 @@ public class JettyServer {
 		
 		
 		
-		
-		FilterHolder filter = new FilterHolder();
-	filter.setInitParameter("allowedOrigins", "*");
-	filter.setInitParameter("allowedMethods", "POST,GET,OPTIONS,PUT,DELETE,HEAD");
-	filter.setInitParameter("allowedHeaders", "X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept");
-	filter.setInitParameter("preflightMaxAge", "728000");
-	filter.setInitParameter("allowCredentials", "true");
-	CrossOriginFilter corsFilter = new CrossOriginFilter();
-	filter.setFilter(corsFilter);
- 
-	FilterMapping filterMapping = createFilterMapping("/*", filter);
-	root.addFilter(filter.class, filterMapping,1);
-		
+	
 
 		
 		
@@ -65,8 +53,7 @@ public class JettyServer {
 
 		server.setHandler(root);
 
-		/*
-	root.addServlet(JsonServlet.class, "/*");*/
+	
 		
 		
 		server.start();
