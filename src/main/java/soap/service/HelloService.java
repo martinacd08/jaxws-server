@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
 
 @WebService
 @Remote
-public interface CustomerInfo {
+public interface HelloService {
  public Movimiento getMovimientoInfo(int MovimientoId);
 
 }
