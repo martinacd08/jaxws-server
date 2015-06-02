@@ -10,6 +10,9 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 /**
  * @author chamerling
  * 
@@ -18,6 +21,6 @@ import javax.xml.ws.ResponseWrapper;
 @WebService
 @Remote
 public interface HelloService {
- public Movimiento getMovimientoInfo(int MovimientoId);
+ public List<Movimiento> getMovimientoInfo(int MovimientoId);
 
 }

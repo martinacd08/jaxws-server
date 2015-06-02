@@ -22,7 +22,7 @@ public class HelloServiceImpl implements HelloService {
 
 	@WebMethod
 	 @WebResult(name = "getMovimientoInfoReturn", targetNamespace = "http://service.soap/")
-	 public Movimiento getMovimientoInfo(@WebParam(name = "MovimientoId") int MovimientoId)
+	 public  List<Movimiento> getMovimientoInfo(@WebParam(name = "MovimientoId") int MovimientoId)
 	 {
 	  // Sample Implementation.. do it your way...
 	  List<Movimiento> MovimientoList = new ArrayList<Movimiento>();
@@ -46,7 +46,7 @@ public class HelloServiceImpl implements HelloService {
 		Movimiento = element;
 	   }
 	  }
-	  return Movimiento;
+	  return MovimientoList;
 	 }
 
 }
