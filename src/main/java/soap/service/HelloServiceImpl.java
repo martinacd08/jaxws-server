@@ -1,31 +1,53 @@
 package soap.service;
+import jdbc.Movimiento;
 
-/**
- * @author chamerling
- * 
- */
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
+ @Stateless
+@WebService
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public class HelloServiceImpl implements HelloService {
 
 
-	@Override
-	public String sayHi(String input) {
-		System.out.println("Hello invoked : " + input);
-		return String.format("Hello '%s'", input);
-	}
-	
-	@Override
-	public String hola() {
-		
-		return String.format("metodo hola");
-	}
-	/*
-	@Override
-    public Book get(int id) {
-        Book b = new Book(id);
-        
-        return b;
-    }
-   */
+	@WebMethod
+	 @WebResult(name = "getMovimientoInfoReturn", targetNamespace = "http://service.soap/")
+	 public Movimiento getMovimientoInfo(@WebParam(name = "MovimientoId") int MovimientoId)
+	 {
+	  // Sample Implementation.. do it your way...
+	  List<Movimiento> MovimientoList = new ArrayList<Movimiento>();
+	  Movimiento c1 = new Movimiento();
+	  c1.saldo = "2000";
+	  c1.importe = "500";
+	  Movimiento c2 = new Movimiento();
+	 c2.saldo = "3000";
+	  c2.importe = "500";
+	  Movimiento c3 = new Movimiento();
+	  c3.saldo = "4000";
+	  c3.importe = "500";
+	  MovimientoList.add(c1);
+	  MovimientoList.add(c2);
+	  MovimientoList.add(c3);
+	  Movimiento Movimiento = null;
+	  Iterator<Movimiento> it = MovimientoList.iterator();
+	  while (it.hasNext()) {
+	   Movimiento element = (Movimiento) it.next();
+	   if (MovimientoId == element.getMovimientoId()) {
+		Movimiento = element;
+	   }
+	  }
+	  return Movimiento;
+	 }
 
 }
  
