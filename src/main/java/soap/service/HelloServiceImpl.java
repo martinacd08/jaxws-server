@@ -22,18 +22,18 @@ public class HelloServiceImpl implements HelloService {
 
 	@WebMethod
 	 @WebResult(name = "getMovimientoInfoReturn", targetNamespace = "http://service.soap/")
-	 public Movimiento getMovimientoInfo(@WebParam(name = "MovimientoId") String MovimientoId)
+	 public Movimiento getMovimientoInfo(@WebParam(name = "MovimientoId") int MovimientoId)
 	 {
 	  // Sample Implementation.. do it your way...
 	  List<Movimiento> MovimientoList = new ArrayList<Movimiento>();
 	  Movimiento c1 = new Movimiento();
-	  c1.saldo = "2000";
+	  c1.saldo = 2000;
 	  c1.importe = "500";
 	  Movimiento c2 = new Movimiento();
-	 c2.saldo = "3000";
+	 c2.saldo = 3000;
 	  c2.importe = "500";
 	  Movimiento c3 = new Movimiento();
-	  c3.saldo = "4000";
+	  c3.saldo = 4000;
 	  c3.importe = "500";
 	  MovimientoList.add(c1);
 	  MovimientoList.add(c2);

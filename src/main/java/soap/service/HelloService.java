@@ -18,6 +18,6 @@ import javax.xml.ws.ResponseWrapper;
 @WebService
 @Remote
 public interface HelloService {
- public Movimiento getMovimientoInfo(String MovimientoId);
+ public Movimiento getMovimientoInfo(int MovimientoId);
 
 }
