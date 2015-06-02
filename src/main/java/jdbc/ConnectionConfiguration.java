@@ -13,7 +13,7 @@ public class ConnectionConfiguration {
     public static Connection getConnection() {
 		Connection conn = null;
         try{
-			conn = DriverManager.getConnection(dbURL, username, password)
+			conn = DriverManager.getConnection(dbURL, username, password);
 			
 			
 		} catch (SQLException ex) {
