@@ -22,7 +22,7 @@ public class HelloServiceImpl implements HelloService {
 
 	@WebMethod
 	 @WebResult(name = "getMovimientoInfoReturn", targetNamespace = "http://service.soap/")
-	 public Movimiento getMovimientoInfo(@WebParam(name = "MovimientoId") int MovimientoId)
+	 public Movimiento getMovimientoInfo(@WebParam(name = "MovimientoId") String MovimientoId)
 	 {
 	  // Sample Implementation.. do it your way...
 	  List<Movimiento> MovimientoList = new ArrayList<Movimiento>();
@@ -42,7 +42,7 @@ public class HelloServiceImpl implements HelloService {
 	  Iterator<Movimiento> it = MovimientoList.iterator();
 	  while (it.hasNext()) {
 	   Movimiento element = (Movimiento) it.next();
-	   if (MovimientoId == element.getMovimientoId()) {
+	   if (MovimientoId == element.saldo) {
 		Movimiento = element;
 	   }
 	  }
