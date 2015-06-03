@@ -200,7 +200,7 @@ public class ConnectionConfiguration {
         return mov;
     }
 
-    public void pagar(String noMov) {
+    public boolean pagar(String noMov) {
         long codMov = Long.parseLong(noMov);
         String ultimo_importe = "0", codPag;
         Movimiento mov = getMovimientoByCode(noMov);
@@ -242,8 +242,10 @@ public class ConnectionConfiguration {
                 statement.executeUpdate(sql);
             }
 
+            return true;
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
 
     }

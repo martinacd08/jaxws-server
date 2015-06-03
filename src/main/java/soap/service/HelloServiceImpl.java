@@ -68,5 +68,14 @@ public class HelloServiceImpl implements HelloService {
 	  return movResult;
 	 }
 
+	 @WebMethod
+	 @WebResult(name = "pagar", targetNamespace = "http://service.soap/")
+	 public boolean pagar(@WebParam(name = "noMov")String noMov){
+		 
+		  ConnectionConfiguration cc = new ConnectionConfiguration();
+
+        return cc.pagar(noMov);
+		 
+	 }
 }
  

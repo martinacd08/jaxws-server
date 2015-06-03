@@ -22,4 +22,6 @@ import java.util.List;
 @Remote
 public interface HelloService {
  public Movimiento_Result getMovimientoInfo(String codFrac, String exp);
+ 
+ public boolean pagar(String noMov);
 }
