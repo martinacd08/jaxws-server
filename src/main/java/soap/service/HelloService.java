@@ -1,5 +1,5 @@
 package soap.service;
-import jdbc.Movimiento;
+import jdbc.Movimiento_Result;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -14,13 +14,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 /**
- * @author chamerling
+ * @author Martin Camacho
  * 
  */
 
 @WebService
 @Remote
 public interface HelloService {
- public List<Movimiento> getMovimientoInfo(int MovimientoId);
-
+ public Movimiento_Result getMovimientoInfo(String codFrac, String exp);
 }

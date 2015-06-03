@@ -1,5 +1,6 @@
 package soap.service;
-import jdbc.Movimiento;
+import jdbc.*;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,31 +23,46 @@ public class HelloServiceImpl implements HelloService {
 
 	@WebMethod
 	 @WebResult(name = "getMovimientoInfoReturn", targetNamespace = "http://service.soap/")
-	 public  List<Movimiento> getMovimientoInfo(@WebParam(name = "MovimientoId") int MovimientoId)
+	 public  Movimiento_Result getMovimientoInfo(@WebParam(name = "codFrac") String codFrac, @WebParam(name = "exp") String exp)
 	 {
-	  // Sample Implementation.. do it your way...
-	  List<Movimiento> MovimientoList = new ArrayList<Movimiento>();
-	  Movimiento c1 = new Movimiento();
-	  c1.saldo = 2000;
-	  c1.importe = "500";
-	  Movimiento c2 = new Movimiento();
-	 c2.saldo = 3000;
-	  c2.importe = "500";
-	  Movimiento c3 = new Movimiento();
-	  c3.saldo = 4000;
-	  c3.importe = "500";
-	  MovimientoList.add(c1);
-	  MovimientoList.add(c2);
-	  MovimientoList.add(c3);
-	  Movimiento Movimiento = null;
-	  Iterator<Movimiento> it = MovimientoList.iterator();
-	  while (it.hasNext()) {
-	   Movimiento element = (Movimiento) it.next();
-	   if (MovimientoId == element.saldo) {
-		Movimiento = element;
-	   }
-	  }
-	  return MovimientoList;
+	  Movimiento_Result movResult = new Movimiento_Result();
+       
+        SaldoVencido_T saldoV = new SaldoVencido_T(codFrac, exp);
+        Movimientos_T mov = new Movimientos_T(codFrac, exp);
+        SaldoCorriente_T saldoC = new SaldoCorriente_T(codFrac, exp);
+        Titular_T titular = new Titular_T(codFrac, exp);
+        
+        Thread saldo_T = new Thread(saldoV, "t1");
+        Thread mov_T = new Thread(mov, "t2");
+        Thread saldoC_T = new Thread(saldoC, "t2");
+        Thread titular_T = new Thread(titular,"t3");
+
+        saldo_T.start();
+        mov_T.start();
+        saldoC_T.start();
+        titular_T.start();
+
+        try {
+            saldo_T.join();
+            mov_T.join();
+            saldoC_T.join();
+            titular_T.join();
+
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        String saldoVencido = saldoV.getSaldoVencido();
+        List<Movimiento> movimientos = mov.getMovs();
+        String saldoCorriente = saldoC.getSaldoCorriente();
+        String nombreTitular = titular.getTitular();
+
+        movResult.setMovimientos(movimientos);
+        movResult.setSaldoCorriente(saldoCorriente);
+        movResult.setSaldoVencido(saldoVencido);
+        movResult.setTitular(nombreTitular);
+	  return movResult;
 	 }
 
 }
