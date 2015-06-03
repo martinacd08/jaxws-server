@@ -25,40 +25,40 @@ public class Movimiento {
         return codTMov;
     }
 
-    public void setCodTMov(String codTMov) {
-        this.codTMov = codTMov;
+    public void setCodTMov(String cm) {
+        this.codTMov = cm;
     }
 
     public String getConsTMov() {
         return consTMov;
     }
 
-    public void setConsTMov(String consTMov) {
-        this.consTMov = consTMov;
+    public void setConsTMov(String cm) {
+        this.consTMov = cm;
     }
 
     public String getCodFrac() {
         return codFrac;
     }
 
-    public void setCodFrac(String codFrac) {
-        this.codFrac = codFrac;
+    public void setCodFrac(String cf) {
+        this.codFrac = cf;
     }
 
     public String getExp() {
         return exp;
     }
 
-    public void setExp(String exp) {
-        this.exp = exp;
+    public void setExp(String e) {
+        this.exp = e;
     }
 
     public String getCodMon() {
         return codMon;
     }
 
-    public void setCodMon(String codMon) {
-        this.codMon = codMon;
+    public void setCodMon(String cm) {
+        this.codMon = cm;
     }
 
     
@@ -66,8 +66,8 @@ public class Movimiento {
         return noMovimiento;
     }
 
-    public void setNoMovimiento(String noMovimiento) {
-        this.noMovimiento = noMovimiento;
+    public void setNoMovimiento(String nm) {
+        this.noMovimiento = nm;
     }
 
     public String getFechaVencimiento() {
@@ -82,24 +82,24 @@ public class Movimiento {
         return importe;
     }
 
-    public void setImporte(String importe) {
-        this.importe = importe;
+    public void setImporte(String i) {
+        this.importe = i;
     }
 
     public String getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(String saldo) {
-        this.saldo = saldo;
+    public void setSaldo(String s) {
+        this.saldo = s;
     }
 
     public String getFechaPago() {
         return fechaPago;
     }
 
-    public void setFechaPago(String fechaPago) {
-        this.fechaPago = formatFecha(fechaPago);
+    public void setFechaPago(String fp) {
+        this.fechaPago = formatFecha(fp);
     }
     public String fechaPago;
     

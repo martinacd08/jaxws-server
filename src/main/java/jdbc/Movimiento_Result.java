@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package jdbc;
 
@@ -20,32 +15,32 @@ public class Movimiento_Result {
         return saldoVencido;
     }
 
-    public void setSaldoVencido(String saldoVencido) {
-        this.saldoVencido = saldoVencido;
+    public void setSaldoVencido(String sv) {
+        this.saldoVencido = sv;
     }
 
     public String getSaldoCorriente() {
         return SaldoCorriente;
     }
 
-    public void setSaldoCorriente(String SaldoCorriente) {
-        this.SaldoCorriente = SaldoCorriente;
+    public void setSaldoCorriente(String sc) {
+        this.SaldoCorriente = sc;
     }
 
     public String getTitular() {
         return titular;
     }
 
-    public void setTitular(String titular) {
-        this.titular = titular;
+    public void setTitular(String t) {
+        this.titular = t;
     }
 
     public List<Movimiento> getMovimientos() {
         return movimientos;
     }
 
-    public void setMovimientos(List<Movimiento> movimientos) {
-        this.movimientos = movimientos;
+    public void setMovimientos(List<Movimiento> m) {
+        this.movimientos = m;
     }
     
     

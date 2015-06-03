@@ -36,8 +36,8 @@ public class Movimientos_T implements Runnable {
         return movs;
     }
 
-    public void setMovs(List<Movimiento> movs) {
-        this.movs = movs;
+    public void setMovs(List<Movimiento> m) {
+        this.movs = m;
     }
 
     @Override

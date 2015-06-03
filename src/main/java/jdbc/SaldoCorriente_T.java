@@ -22,8 +22,8 @@ public class SaldoCorriente_T implements Runnable {
         return saldoCorriente;
     }
 
-    public void setSaldoCorriente(String saldoCorriente) {
-        this.saldoCorriente = saldoCorriente;
+    public void setSaldoCorriente(String sc) {
+        this.saldoCorriente = sc;
     }
 
     public String getCodFrac() {

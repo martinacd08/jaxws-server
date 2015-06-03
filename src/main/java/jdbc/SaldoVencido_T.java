@@ -22,8 +22,8 @@ public class SaldoVencido_T implements Runnable {
         return saldoVencido;
     }
 
-    public void setSaldoVencido(String saldoVencido) {
-        this.saldoVencido = saldoVencido;
+    public void setSaldoVencido(String sv) {
+        this.saldoVencido = sv;
     }
 
     public String getCodFrac() {
