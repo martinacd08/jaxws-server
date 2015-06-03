@@ -57,11 +57,14 @@ public class HelloServiceImpl implements HelloService {
         List<Movimiento> movimientos = mov.getMovs();
         String saldoCorriente = saldoC.getSaldoCorriente();
         String nombreTitular = titular.getTitular();
-
-        movResult.setMovimientos(movimientos);
-        movResult.setSaldoCorriente(saldoCorriente);
-        movResult.setSaldoVencido(saldoVencido);
-        movResult.setTitular(nombreTitular);
+       
+        
+        
+        movResult.movimientos=movimientos;
+        movResult.SaldoCorriente=saldoCorriente;
+        movResult.saldoVencido=saldoVencido;
+        movResult.titular=nombreTitular;
+        
 	  return movResult;
 	 }
 
