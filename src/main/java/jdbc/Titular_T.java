@@ -11,7 +11,7 @@ package jdbc;
  */
 public class Titular_T implements Runnable {
 
-    String codFrac, exp, titular;
+    public String codFrac, exp, titular;
 
     public Titular_T(String c, String e) {
         codFrac = c;

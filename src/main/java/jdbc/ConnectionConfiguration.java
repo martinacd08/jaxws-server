@@ -5,6 +5,7 @@
  */
 package jdbc;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -58,11 +59,11 @@ public class ConnectionConfiguration {
             while (result.next()) {
                 Movimiento mov = new Movimiento();
 
-                mov.setNoMovimiento(result.getString("CodMov"));
-                mov.setFechaPago(result.getString("FechaPag"));
-                mov.setFechaVencimiento(result.getString("FechaV"));
-                mov.setImporte(result.getString("Importe"));
-                mov.setSaldo(result.getString("SaldoMov"));
+                mov.noMovimiento=result.getString("CodMov");
+                mov.fechaPago=result.getString("FechaPag");
+                mov.fechaVencimiento=result.getString("FechaV");
+                mov.importe=result.getString("Importe");
+                mov.saldo=result.getString("SaldoMov");
 
                 movimientos.add(mov);
             }
@@ -181,14 +182,14 @@ public class ConnectionConfiguration {
 
             while (result.next()) {
 
-                mov.setNoMovimiento(result.getString("CodMov"));
-                mov.setCodTMov(result.getString("CodTMov"));
-                mov.setConsTMov(result.getString("ConsTMov"));
-                mov.setCodFrac(result.getString("CodFrac"));
-                mov.setExp(result.getString("Exp"));
-                mov.setImporte(result.getString("Importe"));
-                mov.setCodMon(result.getString("CodMon"));
-                mov.setSaldo(result.getString("SaldoMov"));
+                mov.noMovimiento=result.getString("CodMov");
+                mov.codTMov=result.getString("CodTMov");
+                mov.consTMov=result.getString("ConsTMov");
+                mov.codFrac=result.getString("CodFrac");
+                mov.exp=result.getString("Exp");
+                mov.importe=result.getString("Importe");
+                mov.codMon=result.getString("CodMon");
+                mov.saldo=result.getString("SaldoMov");
                 mov.fechaVencimiento = result.getString("FechaV");
 
             }
@@ -226,14 +227,14 @@ public class ConnectionConfiguration {
 
             codPag = this.getLastCodPag();
 
-            if (Double.parseDouble(mov.getSaldo()) > 0) {
+            if (Double.parseDouble(mov.saldo) > 0) {
                 String sql = "INSERT INTO pagmov(CodPag,CodMov,Importe,FechaPag,CodFrac,Exp)VALUES\n"
                         + "('" + codPag.toString() + "',\n"
                         + "'" + noMov + "',\n"
-                        + "'" + mov.getSaldo() + "',\n"
+                        + "'" + mov.saldo + "',\n"
                         + "'" + currentDate + "',\n"
-                        + "'" + mov.getCodFrac().toString() + "',\n"
-                        + "'" + mov.getExp().toString() + "');";
+                        + "'" + mov.codFrac + "',\n"
+                        + "'" + mov.exp + "');";
 
                 Statement statement = conn.createStatement();
                 statement.executeUpdate(sql);

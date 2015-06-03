@@ -11,7 +11,7 @@ package jdbc;
  */
 public class SaldoVencido_T implements Runnable {
 
-    String codFrac, exp, saldoVencido;
+    public String codFrac, exp, saldoVencido;
 
     public SaldoVencido_T(String c, String e) {
         codFrac = c;
@@ -22,8 +22,8 @@ public class SaldoVencido_T implements Runnable {
         return saldoVencido;
     }
 
-    public void setSaldoVencido(String sv) {
-        this.saldoVencido = sv;
+    public void setSaldoVencido(String saldoVencido) {
+        this.saldoVencido = saldoVencido;
     }
 
     public String getCodFrac() {

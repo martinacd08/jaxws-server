@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Movimientos_T implements Runnable {
 
-    String codFrac, exp;
+    public String codFrac, exp;
 
     public String getCodFrac() {
         return codFrac;
@@ -36,8 +36,8 @@ public class Movimientos_T implements Runnable {
         return movs;
     }
 
-    public void setMovs(List<Movimiento> m) {
-        this.movs = m;
+    public void setMovs(List<Movimiento> movs) {
+        this.movs = movs;
     }
 
     @Override
