@@ -1,5 +1,6 @@
 package soap.service;
 import jdbc.Movimiento_Result;
+import jdbc.Frac;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -24,4 +25,6 @@ public interface HelloService {
  public Movimiento_Result getMovimientoInfo(String codFrac, String exp);
  
  public boolean pagar(String noMov);
+ 
+ public List<Frac> getAllFracs();
 }

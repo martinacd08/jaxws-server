@@ -78,5 +78,15 @@ public class HelloServiceImpl implements HelloService {
         return cc.pagar(noMov);
 		 
 	 }
+	 
+	 @WebMethod
+	 @WebResult(name = "getAllFracs", targetNamespace = "http://service.soap/")
+	 public List<Frac> getAllFracs(){
+		 
+		  ConnectionConfiguration cc = new ConnectionConfiguration();
+
+        return cc.getAllFracs();
+		 
+	 }
 }
  

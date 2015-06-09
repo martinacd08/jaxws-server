@@ -249,5 +249,24 @@ public class ConnectionConfiguration {
         }
 
     }
+	
+	public List<Frac> getAllFracs() {
+        List<Frac> fracs = new ArrayList<Frac>();
+        try {
+            Connection conn = this.getConnection();
+            String sql = "SELECT * from frac;";
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery(sql);
+            while (result.next()) {
+                Frac frac = new Frac();
+                frac.codFrac =result.getString("CodFrac");
+                frac.nombre =result.getString("Nombre");
+                fracs.add(frac);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return fracs;
+    }
 
 }
