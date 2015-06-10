@@ -50,6 +50,7 @@ public class ConnectionConfiguration {
                     + "where mov.Exp = " + e + "\n"
                     + "and mov.CodFrac = " + c + "\n"
                     + " LIMIT  "+page*30+",30;";*/
+					System.err.println (page*30+" ...");
 			String sql  = "CALL rigarcia_proyecto.getAllMovs('"+c+"','"+e+"',"+page*30+");";
 
             Statement statement = conn.createStatement();
