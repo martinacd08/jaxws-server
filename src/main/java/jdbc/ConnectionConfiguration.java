@@ -37,7 +37,7 @@ public class ConnectionConfiguration {
         List<Movimiento> movimientos = new ArrayList<Movimiento>();
         try {
             Connection conn = this.getConnection();
-            String sql = "SELECT mov.CodMov, mov.FechaV, mov.Importe,mov.SaldoMov,resultado.FechaPag\n"
+           /* String sql = "SELECT mov.CodMov, mov.FechaV, mov.Importe,mov.SaldoMov,resultado.FechaPag\n"
                     + "FROM rigarcia_proyecto.movimientos as mov\n"
                     + "\n"
                     + "JOIN (SELECT pg.codFrac, Max(pg.fechaPag) FechaPag, pg.Exp\n"
@@ -49,7 +49,8 @@ public class ConnectionConfiguration {
                     + "\n"
                     + "where mov.Exp = " + e + "\n"
                     + "and mov.CodFrac = " + c + "\n"
-                    + " LIMIT  "+page*30+",30;";
+                    + " LIMIT  "+page*30+",30;";*/
+			String sql  = "CALL rigarcia_proyecto.getAllMovs('"+c+"','"+e+"',"+page*30+");";
 
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery(sql);
