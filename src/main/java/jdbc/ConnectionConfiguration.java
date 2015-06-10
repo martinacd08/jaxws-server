@@ -81,7 +81,7 @@ public class ConnectionConfiguration {
             Connection conn = this.getConnection();
             String sql = "select  SUM(SaldoMov) AS SaldoVencido \n"
                     + "FROM movimientos \n"
-                    + "where Cast(FechaV as datetime) > curdate()\n"
+                    + "where Cast(FechaV as datetime) < curdate()\n"
                     + "and\n"
                     + "Exp = " + e + "\n"
                     + "and CodFrac = " + c + ";";
@@ -106,7 +106,7 @@ public class ConnectionConfiguration {
             Connection conn = this.getConnection();
             String sql = "select  SUM(SaldoMov) AS SaldoVencido \n"
                     + "FROM movimientos \n"
-                    + "where Cast(FechaV as datetime) <= curdate()\n"
+                    + "where Cast(FechaV as datetime) >= curdate()\n"
                     + "and\n"
                     + "Exp = " + e + "\n"
                     + "and CodFrac = " + c + ";";
