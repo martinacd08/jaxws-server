@@ -15,6 +15,7 @@ import java.util.List;
 public class Movimientos_T implements Runnable {
 
     public String codFrac, exp;
+	public int page;
 
     public String getCodFrac() {
         return codFrac;
@@ -24,11 +25,16 @@ public class Movimientos_T implements Runnable {
         return exp;
     }
 
+	public int getPage(){
+		return page;
+	}
+
     List<Movimiento> movs;
 
-    public Movimientos_T(String c, String e) {
+    public Movimientos_T(String c, String e, int p) {
         codFrac = c;
         exp = e;
+		page = p;
         movs = new ArrayList<Movimiento>();
     }
 
@@ -43,7 +49,7 @@ public class Movimientos_T implements Runnable {
     @Override
     public void run() {
         ConnectionConfiguration cc = new ConnectionConfiguration();
-        this.setMovs(cc.getMovimientos(getCodFrac(), getExp()));
+        this.setMovs(cc.getMovimientos(getCodFrac(), getExp(), getPage()));
     }
 
 }
