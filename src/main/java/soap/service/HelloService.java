@@ -22,7 +22,7 @@ import java.util.List;
 @WebService
 @Remote
 public interface HelloService {
- public Movimiento_Result getMovimientoInfo(String codFrac, String exp);
+ public Movimiento_Result getMovimientoInfo(String codFrac, String exp, int page);
  
  public boolean pagar(String noMov);
  
