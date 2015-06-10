@@ -56,6 +56,7 @@ public class HelloServiceImpl implements HelloService {
 
         String saldoVencido = saldoV.getSaldoVencido();
         List<Movimiento> movimientos = mov.getMovs();
+		System.err.println (movimientos);
         String saldoCorriente = saldoC.getSaldoCorriente();
         String nombreTitular = titular.getTitular();
        
