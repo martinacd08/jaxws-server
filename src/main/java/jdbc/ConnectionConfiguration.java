@@ -33,7 +33,7 @@ public class ConnectionConfiguration {
         return conn;
     }
 
-    public List<Movimiento> getMovimientos(String c, String e) {
+    public List<Movimiento> getMovimientos(String c, String e, int page) {
         List<Movimiento> movimientos = new ArrayList<Movimiento>();
         try {
             Connection conn = this.getConnection();
@@ -49,7 +49,7 @@ public class ConnectionConfiguration {
                     + "\n"
                     + "where mov.Exp = " + e + "\n"
                     + "and mov.CodFrac = " + c + "\n"
-                    + ";";
+                    + " LIMIT  "+page*30+",30;";
 
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery(sql);

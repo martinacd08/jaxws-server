@@ -24,12 +24,12 @@ public class HelloServiceImpl implements HelloService {
 
 	@WebMethod
 	 @WebResult(name = "getMovimientoInfoReturn", targetNamespace = "http://service.soap/")
-	 public  Movimiento_Result getMovimientoInfo(@WebParam(name = "codFrac") String codFrac, @WebParam(name = "exp") String exp)
+	 public  Movimiento_Result getMovimientoInfo(@WebParam(name = "codFrac") String codFrac, @WebParam(name = "exp") String exp, @WebParam(name = "page") int page)
 	 {
 	  Movimiento_Result movResult = new Movimiento_Result();
        
         SaldoVencido_T saldoV = new SaldoVencido_T(codFrac, exp);
-        Movimientos_T mov = new Movimientos_T(codFrac, exp);
+        Movimientos_T mov = new Movimientos_T(codFrac, exp, page);
         SaldoCorriente_T saldoC = new SaldoCorriente_T(codFrac, exp);
         Titular_T titular = new Titular_T(codFrac, exp);
         

@@ -12,10 +12,12 @@ package jdbc;
 public class SaldoVencido_T implements Runnable {
 
     public String codFrac, exp, saldoVencido;
+	public int page;
 
-    public SaldoVencido_T(String c, String e) {
+    public SaldoVencido_T(String c, String e, int p) {
         codFrac = c;
         exp = e;
+		page = p;
     }
 
     public String getSaldoVencido() {
@@ -33,11 +35,15 @@ public class SaldoVencido_T implements Runnable {
     public String getExp() {
         return exp;
     }
+	
+	public int getPage(){
+		return page;
+	}
 
     @Override
     public void run() {
         ConnectionConfiguration cc = new ConnectionConfiguration();
-        String result = cc.getSaldoVencido(getCodFrac(), getExp());
+        String result = cc.getSaldoVencido(getCodFrac(), getExp(), getPage());
         if (result == null) {
             result = "0";
         }
