@@ -211,6 +211,7 @@ public class ConnectionConfiguration {
         int year = now.get(Calendar.YEAR);
         String yearString = String.valueOf(year);
         int month = now.get(Calendar.MONTH);
+		month++;
         String monthString = String.valueOf(month);
         int day = now.get(Calendar.DAY_OF_MONTH);
         String dayString = String.valueOf(day);
